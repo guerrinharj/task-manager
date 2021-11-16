@@ -5,6 +5,13 @@
 
 <ul>
 <% @tasks.each do |task| %>
-  <li><%= link_to task.title, task_path(task) %> </li>
+  <li>
+    <%= task.completed ? "DONE" : "NOT DONE"%>
+    <%= link_to task.title, task_path(task) %>
+    <%= link_to "DELETE",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+  </li>
 <% end %>
 </ul>

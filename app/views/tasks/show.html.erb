@@ -1,6 +1,8 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
 
+<%= link_to "Back to Menu", root_path(@task)%>
+
 <%= link_to "Edit #{@task.title}", edit_task_path(@task)%>
 
 <%= link_to "Delete #{@task.title}",
